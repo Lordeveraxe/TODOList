@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/pendingTasksFragment">
+
+    <fragment
+        android:id="@+id/pendingTasksFragment"
+        android:name="com.uptc.todolist.PendingTasksFragment"
+        tools:layout="@layout/pending_tasks_fragment" >
+        <action
+            android:id="@+id/action_pendingTasksFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment" />
+        <action
+            android:id="@+id/action_pendingTasksFragment_to_completedTasksFragment"
+            app:destination="@id/completedTasksFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/completedTasksFragment"
+        android:name="com.uptc.todolist.CompletedTasksFragment"
+        tools:layout="@layout/completed_tasks_fragment">
+        <action
+            android:id="@+id/action_completedTasksFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/taskDetailFragment"
+        android:name="com.uptc.todolist.TaskDetailFragment"
+        tools:layout="@layout/task_detail_fragment" />
+</navigation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Define tu tema personalizado basado en Theme.AppCompat -->
+    <style name="Theme.TODOList" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Personaliza tu tema aquí -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+</resources>

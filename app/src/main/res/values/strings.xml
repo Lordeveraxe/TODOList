@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TODOList</string>
+    <string name="tarea">Tarea</string>
+    <string name="completada">¿Completada?</string>
+    <string name="detalles_adicionales_de_la_tarea">Detalles adicionales de la tarea</string>
+    <string name="descripci_n_de_la_tarea">Descripción de la tarea</string>
+</resources>
