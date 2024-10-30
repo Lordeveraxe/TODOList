@@ -1,10 +1,11 @@
-package com.uptc.todolist
+package com.uptc.todolist.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.uptc.todolist.R
 import com.uptc.todolist.databinding.ActivityMainBinding
 
 

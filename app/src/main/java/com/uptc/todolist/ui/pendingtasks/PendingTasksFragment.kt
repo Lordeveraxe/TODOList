@@ -1,4 +1,4 @@
-package com.uptc.todolist
+package com.uptc.todolist.ui.pendingtasks
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.uptc.todolist.R
+import com.uptc.todolist.viewmodel.TaskViewModel
+import com.uptc.todolist.ui.adapter.TaskAdapter
 
 class PendingTasksFragment : Fragment() {
 
@@ -30,8 +33,10 @@ class PendingTasksFragment : Fragment() {
 
         taskAdapter = TaskAdapter(
             onTaskClick = { task ->
-                viewModel.selectTask(task)
-                findNavController().navigate(R.id.action_pendingTasksFragment_to_taskDetailFragment)
+                // Navegación usando SafeArgs, pasando el taskId
+                val action = PendingTasksFragmentDirections
+                    .actionPendingTasksFragmentToTaskDetailFragment(task.id.toString())
+                findNavController().navigate(action)
             },
             onTaskCheckChange = { task, isChecked ->
                 if (isChecked) {

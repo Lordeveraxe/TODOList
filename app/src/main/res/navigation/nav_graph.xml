@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,11 +5,15 @@
 
     <fragment
         android:id="@+id/pendingTasksFragment"
-        android:name="com.uptc.todolist.PendingTasksFragment"
+        android:name="com.uptc.todolist.ui.pendingtasks.PendingTasksFragment"
         tools:layout="@layout/pending_tasks_fragment" >
         <action
             android:id="@+id/action_pendingTasksFragment_to_taskDetailFragment"
-            app:destination="@id/taskDetailFragment" />
+            app:destination="@id/taskDetailFragment">
+            <argument
+                android:name="taskId"
+                app:argType="string" />
+        </action>
         <action
             android:id="@+id/action_pendingTasksFragment_to_completedTasksFragment"
             app:destination="@id/completedTasksFragment" />
@@ -18,15 +21,23 @@
 
     <fragment
         android:id="@+id/completedTasksFragment"
-        android:name="com.uptc.todolist.CompletedTasksFragment"
+        android:name="com.uptc.todolist.ui.completedtasks.CompletedTasksFragment"
         tools:layout="@layout/completed_tasks_fragment">
         <action
             android:id="@+id/action_completedTasksFragment_to_taskDetailFragment"
-            app:destination="@id/taskDetailFragment" />
+            app:destination="@id/taskDetailFragment">
+            <argument
+                android:name="taskId"
+                app:argType="string" />
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/taskDetailFragment"
-        android:name="com.uptc.todolist.TaskDetailFragment"
-        tools:layout="@layout/task_detail_fragment" />
+        android:name="com.uptc.todolist.ui.taskdetail.TaskDetailFragment"
+        tools:layout="@layout/task_detail_fragment">
+        <argument
+            android:name="taskId"
+            app:argType="string" />
+    </fragment>
 </navigation>

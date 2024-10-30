@@ -1,4 +1,4 @@
-package com.uptc.todolist
+package com.uptc.todolist.ui.completedtasks
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.uptc.todolist.R
+import com.uptc.todolist.ui.adapter.TaskAdapter
+import com.uptc.todolist.viewmodel.TaskViewModel
 
 class CompletedTasksFragment : Fragment() {
 
@@ -25,12 +28,13 @@ class CompletedTasksFragment : Fragment() {
 
         completedTaskAdapter = TaskAdapter(
             onTaskClick = { task ->
-                viewModel.selectTask(task)
-                findNavController().navigate(R.id.action_completedTasksFragment_to_taskDetailFragment)
+                val action = CompletedTasksFragmentDirections
+                    .actionCompletedTasksFragmentToTaskDetailFragment(task.id.toString())
+                findNavController().navigate(action)
             },
             onTaskCheckChange = { task, isChecked ->
                 if (!isChecked) {
-                    viewModel.uncompleteTask(task) // Desmarcar como completada y mover a pendientes
+                    viewModel.uncompleteTask(task)
                 }
             }
         )

@@ -6,10 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".TaskDetailFragment">
+    tools:context=".ui.taskdetail.TaskDetailFragment">
 
     <!-- CardView que envuelve los detalles de la tarea -->
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
@@ -58,5 +59,17 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_delete_task"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Eliminar Tarea"
+        app:layout_constraintTop_toBottomOf="@id/card_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="?attr/colorError"
+        android:textColor="@android:color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

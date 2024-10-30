@@ -1,4 +1,4 @@
-package com.uptc.todolist
+package com.uptc.todolist.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.uptc.todolist.R
+import com.uptc.todolist.data.model.Task
 
 class TaskAdapter(
     private val onTaskClick: (Task) -> Unit,
